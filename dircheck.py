@@ -87,7 +87,10 @@ def main(argv):
             for file_name in files:
                 file_path = join(root,file_name)
                 file_size =  getsize(file_path)
-                file_hash = sha1sum(file_path)
+                try:
+                    file_hash = sha1sum(file_path)
+                except IOError as e:
+                    logger.error(e)
 
                 print('{0}, {1}, {2}, {3}'.format(file_name, file_path,
                                                   file_size, file_hash),
