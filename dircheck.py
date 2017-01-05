@@ -43,9 +43,9 @@ def main(argv):
                'tree and list the name for each file and, if requested, ' \
                'the full path, size, and SHA1 checksum hash for each file.'
 
-    usage = 'Usage: python ./dircheck.py -h (help) | [-p no file path] ' \
-            '[-s no file size] [-c no checksum] [-o output_file] ' \
-            '<directory_path>'
+    usage = 'Usage: python ./dircheck.py -h (help) | [-p output file path] ' \
+            '[-s output file size] [-c output checksum (slow)] ' \
+            '[-o output_file] <directory_path>'
 
     if len(argv) == 0:
         logger.error(usage)
